@@ -12,9 +12,11 @@ namespace PA6_AudioBook
 {
     public partial class frmMain : Form
     {
+        // class variables
         string cwid;
         List<Book> myBooks;
 
+        // constructor
         public frmMain(string tempCwid)
         {
             this.cwid = tempCwid;
@@ -22,22 +24,26 @@ namespace PA6_AudioBook
             pbCover.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
+        // reloads the list of books
         private void frmMain_Load(object sender, EventArgs e)
         {
             LoadList();
         }
 
+        // reloads list of books
         private void LoadList() 
         {
             myBooks = BookFile.GetAllBooks(cwid);
             lstBooks.DataSource = myBooks;
         }
 
+        // closes app
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // sets txt data equal to myBook data
         private void lstBooks_SelectedIndexChanged(object sender, EventArgs e)
         {
             Book myBook = (Book)lstBooks.SelectedItem;
@@ -59,6 +65,7 @@ namespace PA6_AudioBook
             }
         }
 
+        // user clicks rent
         private void btnRent_Click(object sender, EventArgs e)
         {
             Book myBook = (Book)lstBooks.SelectedItem;
@@ -68,6 +75,7 @@ namespace PA6_AudioBook
             LoadList();
         }
 
+        // user clicks return
         private void btnReturn_Click(object sender, EventArgs e)
         {
             Book myBook = (Book)lstBooks.SelectedItem;
@@ -77,6 +85,7 @@ namespace PA6_AudioBook
             LoadList();
         }
 
+        // user clicks delete
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Book myBook = (Book)lstBooks.SelectedItem;
@@ -90,6 +99,7 @@ namespace PA6_AudioBook
             }
         }
 
+        // user clicks edit
         private void btnEdit_Click(object sender, EventArgs e)
         {
             Book myBook = (Book)lstBooks.SelectedItem;
@@ -104,6 +114,7 @@ namespace PA6_AudioBook
             }
         }
 
+        // user clicks new
         private void btnNew_Click(object sender, EventArgs e)
         {
             Book myBook = new Book();

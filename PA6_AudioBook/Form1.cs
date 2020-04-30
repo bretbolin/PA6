@@ -12,16 +12,20 @@ namespace PA6_AudioBook
 {
     public partial class frmCWID : Form
     {
+
+        // constructor
         public frmCWID()
         {
             InitializeComponent();
         }
 
+        // user clicks close
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // user clicks ok
         private void btnOK_Click(object sender, EventArgs e)
         {
             this.Hide();

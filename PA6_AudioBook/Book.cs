@@ -9,7 +9,7 @@ namespace PA6_AudioBook
     class Book
     {
 
-
+        // variables
         public String cwid { get; set; }
         public String isbn { get; set; }
         public String title { get; set; }
@@ -20,6 +20,7 @@ namespace PA6_AudioBook
         public int copies { get; set; }
         public String _id { get; set; }
 
+        // constructor with arguments
         public Book(string cwid, string isbn, string title, string author, string cover, string genre, int length, int copies, string id)
         {
             this.cwid = cwid;
@@ -33,11 +34,13 @@ namespace PA6_AudioBook
             _id = id;
         }
 
+        // constructor no arguments
         public Book()
         { 
         
         }
 
+        // override ToString that returns the title of the book
         public override string ToString()
         {
             return this.title;

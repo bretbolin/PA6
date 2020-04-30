@@ -16,6 +16,7 @@ namespace PA6_AudioBook
         private string cwid;
         private string mode;
 
+        // constructor
         public frmEdit(Object tempBook, string tempMode, string tempCwid)
         {
             myBook = (Book)tempBook;
@@ -25,6 +26,8 @@ namespace PA6_AudioBook
             pbCover.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
+
+        // sets txt data to myBook information
         private void frmEdit_Load(object sender, EventArgs e)
         {
             if (mode == "edit")
@@ -42,11 +45,13 @@ namespace PA6_AudioBook
             }
         }
 
+        // user clicks on close
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // user clicks on save
         private void btnSave_Click(object sender, EventArgs e)
         {
             myBook.title = txtTitleData.Text;
